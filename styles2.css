@@ -1,0 +1,472 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8f0; /* Light greenish background */
+    line-height: 1.6;
+}
+
+header {
+    background-color: #98ff98; /* Light greenish navbar */
+    padding: 15px 30px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    color: white;
+    font-size: 2rem;
+    font-family: 'Pacifico', cursive; /* Cool, stylish font for the logo */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: black;
+}
+
+/* Home Section */
+.home-section {
+    background-image: url('main.jpg'); /* Use your image URL */
+    background-size: cover;
+    background-position: top center; /* Keep the top of the image visible */
+    height: 100vh; /* Set to full viewport height or adjust as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Content Box */
+.content-box {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for readability */
+    padding: 50px; /* Increased padding */
+    text-align: center;
+    border-radius: 20px; /* Slightly increased border radius */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    max-width: 800px; /* Increased max width */
+    width: 90%; /* Increased width to make the box larger */
+    z-index: 2; /* Ensures the content box is above the decorative background */
+    position: relative;
+    animation: fadeIn 1s ease-out; /* Fade-in effect for the box */
+}
+
+/* Decorative Design */
+.home-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.5), rgba(150, 255, 150, 0.2)); /* Soft gradient overlay */
+    z-index: 1;
+    border-radius: 20px; /* Match the content box border radius */
+}
+
+.home-section::after {
+    content: "";
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    border: 2px dashed #98ff98; /* Dashed border around the box */
+    border-radius: 25px; /* Rounded corners for the dashed border */
+    pointer-events: none; /* Makes sure the border doesn't interfere with clicking */
+}
+
+/* Animations for the content box */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Title and Invitation Text Styling */
+.title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+h2 {
+    font-size: 3rem;
+    font-family: 'Pacifico', cursive;
+    margin-top: 10px;
+    color: #2c6e49; /* A darker green for the couple's name */
+}
+
+.invitation-text {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    color: #555;
+    font-family: 'Georgia', serif; /* Elegant font for the invitation text */
+}
+
+/* Countdown Section */
+.countdown-section {
+    padding: 60px 0; /* Add space above and below the section */
+    background-color: #e8f8e8; /* Light greenish background */
+    text-align: center;
+    position: relative;
+}
+
+.countdown-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: #2c6e49;
+    font-family: 'Pacifico', cursive;
+    margin-bottom: 30px;
+}
+
+.timer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.time-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 20px;
+    font-size: 1.2rem;
+}
+
+.time-value {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #2c6e49;
+}
+
+.time-label {
+    font-size: 1rem;
+    color: #555;
+    text-transform: uppercase;
+}
+
+/* Smooth scroll to countdown */
+html {
+    scroll-behavior: smooth;
+}
+
+.venue-section {
+    padding: 40px 0;
+    background-color: #f8f8f8;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.venue-container {
+    display: flex;
+    max-width: 1200px;
+    width: 90%;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.venue-map {
+    flex: 1;
+}
+
+.venue-details {
+    flex: 1;
+    padding: 20px;
+}
+
+.venue-details h3 {
+    color: #2c6e49;
+    margin-bottom: 15px;
+}
+
+.venue-buttons {
+    margin-top: 20px;
+}
+
+.venue-buttons button {
+    margin: 5px;
+    padding: 10px 15px;
+    background-color: #98ff98;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #333;
+    transition: background-color 0.3s;
+}
+
+.venue-buttons button:hover {
+    background-color: #2c6e49;
+    color: white;
+}
+
+.venue-images {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.venue-images img {
+    width: 48%; /* Adjusts size for side-by-side display */
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.events-section {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.event-box {
+    margin: 20px auto;
+    border-radius: 15px;
+    padding: 20px;
+    max-width: 500px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.event-box:hover {
+    transform: translateY(-10px);
+}
+
+.event-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.event-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.event-details h3 {
+    margin-top: 15px;
+    color: #333;
+}
+
+.event-details p {
+    margin: 10px 0;
+    color: #555;
+}
+
+.wishes-section {
+    padding: 50px 20px;
+    background: linear-gradient(to bottom right, #fff4e6, #ffe6f0);
+    text-align: center;
+}
+
+.wishes-header h2 {
+    font-size: 2.5rem;
+    color: #e6739f;
+    margin-bottom: 10px;
+}
+
+.wishes-header p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.wishes-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.wish-card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 280px;
+    text-align: left;
+    transition: transform 0.3s;
+}
+
+.wish-card:hover {
+    transform: translateY(-5px);
+}
+
+.wish-card p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.wish-card span {
+    font-size: 14px;
+    color: #999;
+}
+
+.wish-form {
+    margin-top: 40px;
+    background-color: #ffe6e6;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.wish-form h3 {
+    font-size: 24px;
+    color: #d95d7a;
+    margin-bottom: 20px;
+}
+
+.wish-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wish-form textarea, .wish-form input {
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+
+.wish-form button {
+    background-color: #e6739f;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.wish-form button:hover {
+    background-color: #d95d7a;
+}
+
+.footer {
+    background-color: #f2f2f2;
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.1);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.invitation-line p {
+    font-size: 20px;
+    color: #d95d7a;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footer-nav a {
+    margin: 0 10px;
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-nav a:hover {
+    color: #e6739f;
+}
+
+.footer-contact p {
+    font-size: 14px;
+    color: #555;
+}
+
+.social-media a {
+    color: #555;
+    margin: 0 10px;
+    font-size: 20px;
+}
+
+.social-media a:hover {
+    color: #d95d7a;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+nav {
+    background-color: mintgreen;
+    padding: 10px;
+}
+nav a {
+    margin: 0 10px;
+    color: black;
+    text-decoration: none;
+}
+nav a:hover {
+    color: black;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+nav {
+    background-color: mintgreen;
+    padding: 10px;
+}
+nav a {
+    margin: 0 10px;
+    color: black;
+    text-decoration: none;
+}
+nav a:hover {
+    color: black;
+}
